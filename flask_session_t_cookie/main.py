@@ -27,6 +27,8 @@ if __name__ == '__main__':
     if not os.path.exists('config.py'):
         with open('config.py', 'w') as f:
             f.write("secret_key = ''\ncookie = ''\nsession = {}")
+        print("配置文件已生成，请配置后重新运行")
+        exit(0)
     app = Flask(__name__)
     from config import secret_key, cookie, session
     if cookie:
